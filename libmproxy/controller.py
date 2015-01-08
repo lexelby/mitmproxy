@@ -73,7 +73,7 @@ class Master:
             # because get_input(..) function is not blocking.
             while True:
                 # Small timeout to prevent pegging the CPU
-                msg = q.get(timeout=0.01)
+                msg = q.get(timeout=1.0)
                 self.handle(msg)
                 changed = True
         except Queue.Empty:
